@@ -162,7 +162,7 @@ Suggested .jshintrc file
           "camelcase" : true,
           "indent": 2,
           "undef": true,
-          "quotmark": single,
+          "quotmark": "single",
           "maxlen": 80,
           "trailing": true,
           "curly": true
