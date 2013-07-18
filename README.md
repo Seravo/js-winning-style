@@ -89,8 +89,9 @@ Braces
 ------
 Use opening brace in same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
 
-        function thisIsBlock(){
-These also imply that braces should always be used and never omitted.
+        function thisIsBlock() {
+
+These also imply that braces should always be used end never omitted.
 
 The npm style guide states that only use braces if a block needs to wrap to the next line, otherwise don’t.
 
@@ -139,14 +140,18 @@ No expressed opinion: jQuery, Crockford
 
 Arrays
 ------
-Use plural forms: Idiomatic var documents = [];
+Use plural forms: Idiomatic
+
+        var documents = [];
 
 No expressed opinion: Google, jQuery, npm, Node, Crockford
 
 Objects and classes
 -------------------
 
-Use like below: Google, npm, Node var ThisIsObject = new Date;
+Use like below: Google, npm, Node
+
+        var ThisIsObject = new Date();
 
 No expressed opinion: jQuery, Idiomatic, Crockford
 
