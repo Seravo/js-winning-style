@@ -1,7 +1,7 @@
 JavaScript, the winning style
 =============================
 
-    _NOTE_: This 'research' is was originally published as a blog article at http://seravo.fi/2013/javascript-the-winning-style and then transformed into a public Git repo on suggestion by [Eric Elliott](http://ericleads.com/).
+    _NOTE_: This 'research' was originally published as a blog article at http://seravo.fi/2013/javascript-the-winning-style and then transformed into a public Git repo on suggestion by [Eric Elliott](http://ericleads.com/).
 
 
 If your code is easy to read, there will be less bugs, any remaining bugs will be easier to debug and new coders will have a lower barrier to participate in your project. Everybody agrees that investing a bit of time following an agreed coding style is worth all the benefits it yields. JavaScript does not, unlike some languages like for example Python, have an authorative style guide. Instead there are several popular ones:
@@ -90,7 +90,7 @@ Braces
 Use opening brace in same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
 
         function thisIsBlock(){
-These also imply that braces should always be used end never omitted.
+These also imply that braces should always be used and never omitted.
 
 The npm style guide states that only use braces if a block needs to wrap to the next line, otherwise don’t.
 
