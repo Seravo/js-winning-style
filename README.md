@@ -4,7 +4,7 @@ JavaScript, the winning style
     _NOTE_: This 'research' was originally published as a blog article at http://seravo.fi/2013/javascript-the-winning-style and then transformed into a public Git repo on suggestion by [Eric Elliott](http://ericleads.com/).
 
 
-If your code is easy to read, there will be less bugs, any remaining bugs will be easier to debug and new coders will have a lower barrier to participate in your project. Everybody agrees that investing a bit of time following an agreed coding style is worth all the benefits it yields. JavaScript does not, unlike some languages like for example Python, have an authorative style guide. Instead there are several popular ones:
+If your code is easy to read, there will be fewer bugs, any remaining bugs will be easier to debug and new coders will have a lower barrier to participate in your project. Everybody agrees that investing a bit of time to following an agreed-upon coding style is worth all the benefits it yields. Unlike Python and some other languages, JavaScript does not have an authoritative style guide. Instead there are several popular ones:
 
 * [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 * [npm’s coding style](https://npmjs.org/doc/coding-style.html)
@@ -29,7 +29,7 @@ Use sparingly like below: Google, npm, Node.js
 
         project.MyClass = function(arg1, arg2) {
 
-Use exessive white space like below: Idiomatic, jQuery
+Use excessive white space like below: Idiomatic, jQuery
 
         for ( i = 0; i < length; i++ ) {
 
@@ -47,9 +47,9 @@ No expressed opinion: jQuery, Idiomatic
 
 Semicolons
 ----------
-Always use semicolons and don’t rely in implicit insertion: Google, Node.js, Crockford
+Always use semicolons and don’t rely on implicit insertion: Google, Node.js, Crockford
 
-Don’t use expect on some situations: npm
+Don’t use except in some situations: npm
 
 No expressed opinion: jQuery, Idiomatic
 
@@ -63,7 +63,7 @@ No expressed opinion: npm, Node.js, jQuery, Crockford
 
 Quotes
 ------
-Prefer ' over ": Google, Node.js
+Prefer `'` over `"`: Google, Node.js
 
 Double quotes: jQuery
 
@@ -83,17 +83,21 @@ Multiple in one go with line ending commas like below: Idiomatic, jQuery
           quux;
 Start with comma: npm
 
+        var foo = ""
+          , bar = ""
+          , quux;
+
 No expressed opinion: Google, Crockford
 
 Braces
 ------
-Use opening brace in same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
+Use opening brace on the same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
 
         function thisIsBlock() {
 
-These also imply that braces should always be used end never omitted.
+These also imply that braces should be used in all cases.
 
-The npm style guide states that only use braces if a block needs to wrap to the next line, otherwise don’t.
+The npm style guide states that braces should only be used if a block needs to wrap to the next line.
 
 Globals
 -------
@@ -111,7 +115,7 @@ Naming
 Variables
 ---------
 
-Start first word lowercase and after that all words start with uppercase letter: Google, npm, Node, Idiomatic
+Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Node, Idiomatic
 
         var foo = "";
         var fooName = "";
@@ -125,13 +129,13 @@ No expressed opinion: jQuery, Idiomatic, Crockford
 
 Functions
 ---------
-Start first word lowercase and after that all words start with uppercase letter (camelCaps): Google, npm, Idiomatic, Node
+Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Idiomatic, Node
 
-Prefer longer and describing function names.
+Prefer longer, descriptive function names.
 
         function veryLongOperationName
         function short()..
-Use words vocubular like is, set, get:
+Use vocabulary like is, set, get:
 
         function isReady()
         function setName()
@@ -149,7 +153,7 @@ No expressed opinion: Google, jQuery, npm, Node, Crockford
 Objects and classes
 -------------------
 
-Use like below: Google, npm, Node
+Use Pascal case (every word's first letter is capitalized): Google, npm, Node
 
         var ThisIsObject = new Date();
 
@@ -157,11 +161,11 @@ No expressed opinion: jQuery, Idiomatic, Crockford
 
 Other
 -----
-Use all-lower-hyphen-css-case for multiword filenames and config keys: npm
+Use all-lower-hyphen-css-case for multi-word filenames and config keys: npm
 
 Suggested .jshintrc file
 ========================
-[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options Below we have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-avare code editors will notice it and follow it though all code in your project.
+[JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options Below we have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
 
         {
           "camelcase" : true,
@@ -173,7 +177,7 @@ Suggested .jshintrc file
           "curly": true
         }
 
-In addition to it you should add into your (browser read) JavaScript files the following header:
+In addition to it you should add into your (browser-read) JavaScript files the following header:
 
         /* jshint browser:true, jquery:true */
 In your Node.js files you should add:
