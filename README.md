@@ -122,10 +122,11 @@ Start first word lowercase and after that all words start with uppercase letter 
 
 Constants
 ---------
-Use uppercase: Google, npm, Node
+Use uppercase with underscore: Google, npm, Node, Idiomatic
 
-        var CONS = 'VALUE';
-No expressed opinion: jQuery, Idiomatic, Crockford
+        var CONSTANT = 'VALUE';
+        var CONSTANT_NAME = 'VALUE';
+No expressed opinion: jQuery, Crockford
 
 Functions
 ---------
