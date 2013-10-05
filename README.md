@@ -1,7 +1,7 @@
 JavaScript, the winning style
 =============================
 
-    _NOTE_: This 'research' was originally published as a blog article at http://seravo.fi/2013/javascript-the-winning-style and then transformed into a public Git repo on suggestion by [Eric Elliott](http://ericleads.com/).
+_NOTE_: This 'research' was originally published as a blog article at http://seravo.fi/2013/javascript-the-winning-style and then transformed into a public Git repo on suggestion by [Eric Elliott](http://ericleads.com/).
 
 
 If your code is easy to read, there will be fewer bugs, any remaining bugs will be easier to debug and new coders will have a lower barrier to participate in your project. Everybody agrees that investing a bit of time to following an agreed-upon coding style is worth all the benefits it yields. Unlike Python and some other languages, JavaScript does not have an authoritative style guide. Instead there are several popular ones:
@@ -26,13 +26,13 @@ Four spaces: Crockford
 Spaces between arguments and expressions
 ----------------------------------------
 Use sparingly like below: Google, npm, Node.js
-
-        project.MyClass = function(arg1, arg2) {
-
+```js
+project.MyClass = function(arg1, arg2) {
+```
 Use excessive white space like below: Idiomatic, jQuery
-
-        for ( i = 0; i < length; i++ ) {
-
+```js
+for ( i = 0; i < length; i++ ) {
+```
 No expressed opinion: Crockford
 
 Many guides remind not to have any trailing spaces!
@@ -72,29 +72,30 @@ No expressed opinion: npm, Idiomatic, Crockford
 Variable declarations
 ---------------------
 One per line and no commas: Node.js
-
-        var foo = '';
-        var bar = '';
-
+```js
+var foo = '';
+var bar = '';
+```
 Multiple in one go with line ending commas like below: Idiomatic, jQuery
-
-        var foo = "",
-          bar = "",
-          quux;
+```js
+var foo = "",
+  bar = "",
+  quux;
+```
 Start with comma: npm
-
-        var foo = ""
-          , bar = ""
-          , quux;
-
+```js
+var foo = ""
+  , bar = ""
+  , quux;
+```
 No expressed opinion: Google, Crockford
 
 Braces
 ------
 Use opening brace on the same line: Google, npm, Node, Idiomatic,  jQuery, Crockford
-
-        function thisIsBlock() {
-
+```js
+function thisIsBlock() {
+```
 These also imply that braces should be used in all cases.
 
 The npm style guide states that braces should only be used if a block needs to wrap to the next line.
@@ -116,16 +117,17 @@ Variables
 ---------
 
 Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Node, Idiomatic
-
-        var foo = "";
-        var fooName = "";
-
+```js
+var foo = "";
+var fooName = "";
+```
 Constants
 ---------
 Use uppercase with underscore: Google, npm, Node, Idiomatic
-
-        var CONSTANT = 'VALUE';
-        var CONSTANT_NAME = 'VALUE';
+```js
+var CONSTANT = 'VALUE';
+var CONSTANT_NAME = 'VALUE';
+```
 No expressed opinion: jQuery, Crockford
 
 Functions
@@ -133,31 +135,33 @@ Functions
 Start first word lowercase and after that all words start with uppercase letter (Camel case): Google, npm, Idiomatic, Node
 
 Prefer longer, descriptive function names.
-
-        function veryLongOperationName
-        function short()..
+```js
+function veryLongOperationName
+function short()..
+```
 Use vocabulary like is, set, get:
-
-        function isReady()
-        function setName()
-        function getName()
+```js
+function isReady()
+function setName()
+function getName()
+```
 No expressed opinion: jQuery, Crockford
 
 Arrays
 ------
 Use plural forms: Idiomatic
-
-        var documents = [];
-
+```js
+var documents = [];
+```
 No expressed opinion: Google, jQuery, npm, Node, Crockford
 
 Objects and classes
 -------------------
 
 Use Pascal case (every word's first letter is capitalized): Google, npm, Node
-
-        var ThisIsObject = new Date();
-
+```js
+var ThisIsObject = new Date();
+```
 No expressed opinion: jQuery, Idiomatic, Crockford
 
 Other
@@ -167,61 +171,63 @@ Use all-lower-hyphen-css-case for multi-word filenames and config keys: npm
 Suggested .jshintrc file
 ========================
 [JSHint](http://www.jshint.com/) is a JavaScript syntax and style checker you can use to alert about code style issues. It integrates well into to many commonly used editors and is a nice way to enforce a common style. See JS Hint documentation for all available options: http://www.jshint.com/docs/#options Below we have created a .jshintrc file that follows the recommendations set above in this article. You can place it in the root folder of your project and JSHint-aware code editors will notice it and follow it though all code in your project.
-
-        {
-          "camelcase" : true,
-          "indent": 2,
-          "undef": true,
-          "quotmark": "single",
-          "maxlen": 80,
-          "trailing": true,
-          "curly": true
-        }
-
+```json
+{
+  "camelcase" : true,
+  "indent": 2,
+  "undef": true,
+  "quotmark": "single",
+  "maxlen": 80,
+  "trailing": true,
+  "curly": true
+}
+```
 In addition to it you should add into your (browser-read) JavaScript files the following header:
-
-        /* jshint browser:true, jquery:true */
+```js
+/* jshint browser:true, jquery:true */
+```
 In your Node.js files you should add:
-
-        /*jshint node:true */
+```js
+/*jshint node:true */
+```
 In any kind of JavaScript file it is also good to add the declaration:
-
-        'use strict';
+```js
+'use strict';
+```
 This will affect both JSHint and your JavaScript engine, which will become less compliant but run your JavaScript faster.
 
 Automatically JSHint files before Git commit
 If you want to make sure that all of your JS code stays compliant to the style defined in your .jshintrc, you can set the following contents to your .git/hooks/pre-commit file, which is then run each time you try to commit any new of modified files to the project:
+```bash
+#!/bin/bash
+# Pre-commit Git hook to run JSHint on JavaScript files.
+#
+# If you absolutely must commit without testing,
+# use: git commit --no-verify
 
+filenames=($(git diff --cached --name-only HEAD))
 
-        #!/bin/bash
-        # Pre-commit Git hook to run JSHint on JavaScript files.
-        #
-        # If you absolutely must commit without testing,
-        # use: git commit --no-verify
+which jshint &> /dev/null
+if [ $? -ne 0 ];
+then
+  echo "error: jshint not found"
+  echo "install with: sudo npm install -g jshint"
+  exit 1
+fi
 
-        filenames=($(git diff --cached --name-only HEAD))
-
-        which jshint &> /dev/null
-        if [ $? -ne 0 ];
-        then
-          echo "error: jshint not found"
-          echo "install with: sudo npm install -g jshint"
-          exit 1
-        fi
-
-        for i in "${filenames[@]}"
-        do
-	        if [[ $i =~ \.js$ ]];
-	        then
-		        echo jshint $i
-		        jshint $i
-		        if [ $? -ne 0 ];
-		        then
-			        exit 1
-		        fi
-	        fi
-        done
-
+for i in "${filenames[@]}"
+do
+  if [[ $i =~ \.js$ ]];
+  then
+    echo jshint $i
+    jshint $i
+    if [ $? -ne 0 ];
+    then
+      exit 1
+    fi
+  fi
+done
+```
 Happy coding!
 
 
