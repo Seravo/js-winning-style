@@ -8,7 +8,7 @@ If your code is easy to read, there will be fewer bugs, any remaining bugs will 
 
 * [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 * [npm’s coding style](https://docs.npmjs.com/misc/coding-style)
-* [Felix’s Node.js Style Guide](http://nodeguide.com/style.html)
+* [Felix’s Node.js Style Guide](https://github.com/felixge/node-style-guide)
 * [Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 * [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js/)
 * [Douglas Crockford’s JavaScript coding style](http://javascript.crockford.com/code.html)
