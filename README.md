@@ -7,8 +7,8 @@ _NOTE_: This 'research' was originally published as a blog article at http://ser
 If your code is easy to read, there will be fewer bugs, any remaining bugs will be easier to debug and new coders will have a lower barrier to participate in your project. Everybody agrees that investing a bit of time to following an agreed-upon coding style is worth all the benefits it yields. Unlike Python and some other languages, JavaScript does not have an authoritative style guide. Instead there are several popular ones:
 
 * [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-* [npm’s coding style](https://npmjs.org/doc/coding-style.html)
-* [Felix’s Node.js Style Guide](http://nodeguide.com/style.html)
+* [npm’s coding style](https://docs.npmjs.com/misc/coding-style)
+* [Felix’s Node.js Style Guide](https://github.com/felixge/node-style-guide)
 * [Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 * [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js/)
 * [Douglas Crockford’s JavaScript coding style](http://javascript.crockford.com/code.html)
